@@ -49,5 +49,11 @@ createApp({
     cambioImmagine(nuovoIndice) {
       this.contatore = nuovoIndice;
     },
+    autoplay() {
+      setInterval(this.next, 3000);
+    },
+  },
+  mounted() {
+    this.autoplay();
   },
 }).mount("#app");
