@@ -31,6 +31,7 @@ createApp({
         },
       ],
       contatore: 0,
+      prova: this.autoplay(),
     };
   },
   methods: {
@@ -50,10 +51,14 @@ createApp({
       this.contatore = nuovoIndice;
     },
     autoplay() {
-      setInterval(this.next, 3000);
+      const stop = setInterval(this.next, 3000);
+      return stop;
+    },
+    stopPlay() {
+      clearInterval(this.prova);
     },
   },
-  mounted() {
-    this.autoplay();
-  },
+  //   mounted() {
+  //     this.autoplay();
+  //   },
 }).mount("#app");
